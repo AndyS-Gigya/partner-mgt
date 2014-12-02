@@ -52,7 +52,8 @@ angular.module('partners').controller('PartnersController', ['$scope', '$statePa
 			}).progress(function(evt) {
 				console.log('progress: ' + parseInt(100.0 * evt.loaded / evt.total) + '% of '+ evt.config.file.name);
 			}).success(function(data, status, headers, config) {
-				$scope.partner = data;
+				// TODO: $scope.partner = data;
+				alert("Logo is uploaded, reload page to see it.")
 			}).error(function(data, status, headers, config) {
 				$scope.error = 'error on uploading file ' + config.file.name;
 			});
