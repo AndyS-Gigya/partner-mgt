@@ -14,12 +14,13 @@ var PartnerSchema = new Schema({
 	name: {
 		type: String,
 		default: '',
-		required: 'Naw dawg',
+		required: 'Please list the company name',
 		trim: true
 	},
 	/* logo */
 	type: {
 		type: String,
+		default: '',
 		enum: ['NEXUS', 'Agency', 'Solution Provider'],
 		required: true,
 		trim: true
