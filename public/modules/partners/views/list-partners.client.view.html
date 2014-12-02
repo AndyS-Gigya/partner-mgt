@@ -21,6 +21,8 @@
         </section>
     </div>
     <div class="alert alert-warning text-center">
-    	Don't see your partner? <a href="/#!/partners/create">Add them!</a>
+    	Don't see your partner? 
+        <a data-ng-show="authentication.user" href="/#!/partners/create">Add them!</a>
+        <a data-ng-hide="authentication.user" href="/#!/signin">Log in to add them.</a>
     </div>
 </section>

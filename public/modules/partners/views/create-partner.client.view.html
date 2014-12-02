@@ -2,7 +2,10 @@
     <div class="page-header">
         <h1>New Partner</h1>
     </div>
-    <div class="col-md-12">
+    <div class="alert alert-warning text-center" data-ng-hide="authentication.user" >
+        <a href="/#!/signin">Log in to create a new partner</a>
+    </div>
+    <div class="col-md-12" data-ng-show="authentication.user" >
         <form class="form-horizontal" data-ng-submit="create()" novalidate>
             <fieldset>
                 <div class="form-group">
