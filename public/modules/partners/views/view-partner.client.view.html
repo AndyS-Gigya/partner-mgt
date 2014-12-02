@@ -28,6 +28,10 @@
 		<img data-ng-src="/partners/{{partner._id}}/logo">
 	</div>
 
+	<div class="alert alert-warning text-center" 
+		data-ng-show="((authentication.user) && (authentication.user._id == partner.user._id) && !partner.overview)">
+		<a class="btn btn-primary" href="/#!/partners/{{partner._id}}/edit">Add details</a>
+	</div>
 	<div>
 		<section data-ng-show="partner.overview">
 			<h2>Overview</h2>
