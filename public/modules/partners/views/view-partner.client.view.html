@@ -1,15 +1,45 @@
 <section data-ng-controller="PartnersController" data-ng-init="findOne()">
 	<div class="page-header">
-		<h1 data-ng-bind="partner.name"></h1>
+		<h1>
+			<span data-ng-bind="partner.name"></span> 
+			<small data-ng-bind="partner.type"></small>
+		</h1>
 	</div>
-	<div class="pull-right" data-ng-show="((authentication.user) && (authentication.user._id == partner.user._id))">
+
+	<div>
+		<section>
+			<h2>Overview</h2>
+			<p data-ng-bind="partner.overview"></p>
+		</section>
+
+		<section>
+			<h2>How Gigya Adds Value</h2>
+			<p data-ng-bind="partner.valueAdd"></p>
+		</section>
+
+		<section>
+			<h2>Implementation</h2>
+			<p data-ng-bind="partner.implementation"></p>
+		</section>
+
+		<section>
+			<h2>Developer Reference</h2>
+			<p>
+				<a data-ng-bind="partner.developerPageURL"></a>
+			</p>
+		</section>
+
+
+	</div>
+
+	<aside class="pull-right" data-ng-show="((authentication.user) && (authentication.user._id == partner.user._id))">
 		<a class="btn btn-primary" href="/#!/partners/{{partner._id}}/edit">
 			<i class="glyphicon glyphicon-edit"></i>
 		</a>
 		<a class="btn btn-primary" data-ng-click="remove();">
 			<i class="glyphicon glyphicon-trash"></i>
 		</a>
-	</div>
+	</aside>
 	<small>
 		<em class="text-muted">
 			Posted on
