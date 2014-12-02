@@ -14,6 +14,10 @@ module.exports = function(app) {
 		.put(users.requiresLogin, partners.hasAuthorization, partners.update)
 		.delete(users.requiresLogin, partners.hasAuthorization, partners.delete);
 
+	app.route('/partners/:partnerId/logo')
+		.get(partners.logo)
+		.put(users.requiresLogin, partners.hasAuthorization, partners.upload);
+
 	// Finish by binding the Partner middleware
 	app.param('partnerId', partners.partnerByID);
 };

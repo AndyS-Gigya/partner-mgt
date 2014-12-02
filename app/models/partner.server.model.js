@@ -17,13 +17,18 @@ var PartnerSchema = new Schema({
 		required: 'Please list the company name',
 		trim: true
 	},
-	/* logo */
+
 	type: {
 		type: String,
 		default: '',
 		enum: ['NEXUS', 'Agency', 'Solution Provider'],
 		required: true,
 		trim: true
+	},
+
+	logo: {
+		type: String,
+		description: 'Filename'
 	},
 
 	/* content script */

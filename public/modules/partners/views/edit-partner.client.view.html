@@ -3,7 +3,30 @@
         <h1>Edit Partner</h1>
     </div>
     <div class="col-md-12">
+
+        <form class="form-horizontal" data-ng-submit="upload()" novalidate>
+            <fieldset>
+                <div class="form-group">
+                    <label class="control-label" for="logo">Logo</label>
+                    <div class="controls">
+                        <button id="logo" ng-file-select ng-model="logo" class="btn btn-primary">Attach Logo</button>
+                        <div ng-file-drop ng-model="logo" class="drop-box" 
+                            drag-over-class="{accept:'dragover', reject:'dragover-err', delay:100}"
+                             accept="image/*">
+                                    Drop logo image here
+                        </div>
+                    </div>
+                    <!--
+                    <img data-ng-src="{{partner.logourl}}" data-ng-show="partner.logo">
+                    -->
+                </div>
+            </fieldset>
+        </form>
+        
+
         <form class="form-horizontal" data-ng-submit="update()" novalidate>
+            
+
             <fieldset>
                 <div class="form-group">
                     <label class="control-label" for="name">Name</label>
@@ -41,7 +64,7 @@
                      <textarea data-ng-model="partner.implementation" id="implementation" class="form-control">
                     </textarea>
                 </div>
-
+            
                 <div class="form-group">
                     <label class="control-label" for="developerPageURL">Developer Reference URL</label>
                     <div class="controls">

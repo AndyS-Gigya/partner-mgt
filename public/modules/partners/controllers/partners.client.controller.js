@@ -1,8 +1,8 @@
 'use strict';
 
 // Partners controller
-angular.module('partners').controller('PartnersController', ['$scope', '$stateParams', '$location', 'Authentication', 'Partners',
-	function($scope, $stateParams, $location, Authentication, Partners) {
+angular.module('partners').controller('PartnersController', ['$scope', '$stateParams', '$location', 'Authentication', 'Partners', '$upload',
+	function($scope, $stateParams, $location, Authentication, Partners, $upload) {
 		$scope.authentication = Authentication;
 
 		// Create new Partner
@@ -40,6 +40,24 @@ angular.module('partners').controller('PartnersController', ['$scope', '$statePa
 				});
 			}
 		};
+
+		$scope.$watch('logo', function() {
+			var file = $scope.logo[0];
+			if (!file) return;
+
+			$scope.upload = $upload.upload({
+				url: '/partners/' + $scope.partner._id + '/logo',
+				method: 'PUT',
+				file: file
+			}).progress(function(evt) {
+				console.log('progress: ' + parseInt(100.0 * evt.loaded / evt.total) + '% of '+ evt.config.file.name);
+			}).success(function(data, status, headers, config) {
+				$scope.partner = data;
+			}).error(function(data, status, headers, config) {
+				$scope.error = 'error on uploading file ' + config.file.name;
+			});
+		});
+		
 
 		// Update existing Partner
 		$scope.update = function() {
