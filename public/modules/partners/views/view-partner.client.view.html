@@ -7,25 +7,25 @@
 	</div>
 
 	<div>
-		<section>
+		<section data-ng-show="partner.overview">
 			<h2>Overview</h2>
 			<p data-ng-bind="partner.overview"></p>
 		</section>
 
-		<section>
+		<section  data-ng-show="partner.valueAdd">
 			<h2>How Gigya Adds Value</h2>
 			<p data-ng-bind="partner.valueAdd"></p>
 		</section>
 
-		<section>
+		<section data-ng-show="partner.implementation">
 			<h2>Implementation</h2>
 			<p data-ng-bind="partner.implementation"></p>
 		</section>
 
-		<section>
+		<section data-ng-show="partner.developerPageURL">
 			<h2>Developer Reference</h2>
 			<p>
-				<a data-ng-bind="partner.developerPageURL"></a>
+				<a data-ng-href="partner.developerPageURL" data-ng-bind="partner.developerPageURL"></a>
 			</p>
 		</section>
 
