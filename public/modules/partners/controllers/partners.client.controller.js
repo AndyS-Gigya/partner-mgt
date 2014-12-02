@@ -9,7 +9,8 @@ angular.module('partners').controller('PartnersController', ['$scope', '$statePa
 		$scope.create = function() {
 			// Create new Partner object
 			var partner = new Partners ({
-				name: this.name
+				name: this.name,
+				type: this.type
 			});
 
 			// Redirect after save
