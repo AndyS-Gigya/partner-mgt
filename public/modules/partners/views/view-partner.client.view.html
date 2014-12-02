@@ -1,7 +1,7 @@
 
 
 <section data-ng-controller="PartnersController" data-ng-init="findOne()">
-	<aside class="pull-right">
+	<aside class="pull-right" style="margin-left: 5px;">
 		<a href="/#!/partners" class="btn btn-default">
 			go back to list
 		</a>
@@ -9,6 +9,15 @@
  
 
 	<div class="page-header">
+
+		<aside class="pull-right" data-ng-show="((authentication.user) && (authentication.user._id == partner.user._id))">
+			<a class="btn btn-primary" href="/#!/partners/{{partner._id}}/edit">
+				<i class="glyphicon glyphicon-edit"></i>
+			</a>
+			<a class="btn btn-primary" data-ng-click="remove();" data-ng-show="false">
+				<i class="glyphicon glyphicon-trash"></i>
+			</a>
+		</aside>
 		<h1>
 			<span data-ng-bind="partner.name"></span> 
 			<small data-ng-bind="partner.type"></small>
@@ -41,14 +50,6 @@
 
 	</div>
 
-	<aside class="pull-right" data-ng-show="((authentication.user) && (authentication.user._id == partner.user._id))">
-		<a class="btn btn-primary" href="/#!/partners/{{partner._id}}/edit">
-			<i class="glyphicon glyphicon-edit"></i>
-		</a>
-		<a class="btn btn-primary" data-ng-click="remove();" data-ng-show="false">
-			<i class="glyphicon glyphicon-trash"></i>
-		</a>
-	</aside>
 	<small>
 		<em class="text-muted">
 			Posted on
