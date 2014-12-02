@@ -61,9 +61,9 @@ exports.update = function(req, res) {
 
 
 function logoPath(partner, logo, root) {
-	root = root || './public';
+	root = root || path.join(__dirname, '../../public');
 	var filename = logo || partner.logo || 'logo.png';
-	var logoPath = path.join(root, 'uploads/partners', partner.id, logo );
+	var logoPath = path.join(root, 'uploads/partners', partner.id, filename );
 	return logoPath;
 
 }
