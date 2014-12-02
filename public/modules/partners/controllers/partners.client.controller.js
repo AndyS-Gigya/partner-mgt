@@ -42,7 +42,7 @@ angular.module('partners').controller('PartnersController', ['$scope', '$statePa
 		};
 
 		$scope.$watch('logo', function() {
-			var file = $scope.logo[0];
+			var file = (file = $scope.logo) && file[0];
 			if (!file) return;
 
 			$scope.upload = $upload.upload({
