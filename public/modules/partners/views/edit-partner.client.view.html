@@ -12,6 +12,43 @@
                     </div>
                 </div>
                 <div class="form-group">
+                    <label class="control-label" for="type">Type</label>
+                    <div class="controls">
+                        <select data-ng-model="partner.type" id="type" class="form-control" >
+                            <option>NEXUS</option>
+                            <option>Agency</option>
+                            <option>Solution Provider</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label" for="overview">Overview</label>
+                     <textarea data-ng-model="partner.overview" id="overview" class="form-control">
+                    </textarea>
+                </div>
+            
+                <div class="form-group">
+                    <label class="control-label" for="valueAdd">How Gigya Adds Value</label>
+                     <textarea data-ng-model="partner.valueAdd" id="valueAdd" class="form-control">
+                    </textarea>
+                </div>
+
+
+                <div class="form-group">
+                    <label class="control-label" for="implementation">Implementation</label>
+                     <textarea data-ng-model="partner.implementation" id="implementation" class="form-control">
+                    </textarea>
+                </div>
+
+                <div class="form-group">
+                    <label class="control-label" for="developerPageURL">Developer Reference URL</label>
+                    <div class="controls">
+                        <input type="text" data-ng-model="partner.developerPageURL" id="developerPageURL" class="form-control" placeholder="http://developers.gigya.com/015_Partners/...">
+                    </div>
+                </div>
+
+
+                <div class="form-group">
                     <input type="submit" value="Update" class="btn btn-default">
                 </div>
 				<div data-ng-show="error" class="text-danger">
