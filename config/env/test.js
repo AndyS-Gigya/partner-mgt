@@ -4,7 +4,7 @@ module.exports = {
 	db: 'mongodb://localhost/partners-mgt-test',
 	port: 3001,
 	app: {
-		title: 'partners-mgt - Test Environment'
+		title: 'Gigya Partners Management - Test Environment'
 	},
 	facebook: {
 		clientID: process.env.FACEBOOK_ID || 'APP_ID',

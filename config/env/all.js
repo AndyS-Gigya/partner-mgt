@@ -2,9 +2,9 @@
 
 module.exports = {
 	app: {
-		title: 'partners-mgt',
-		description: 'Full-Stack JavaScript with MongoDB, Express, AngularJS, and Node.js',
-		keywords: 'MongoDB, Express, AngularJS, Node.js'
+		title: 'Gigya Partners Metadata Management',
+		description: 'The source of truth for Gigya partners, for the Gigya website',
+		keywords: 'partner, nexus, integration, reseller'
 	},
 	port: process.env.PORT || 3000,
 	templateEngine: 'swig',

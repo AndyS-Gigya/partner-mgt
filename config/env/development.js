@@ -3,7 +3,7 @@
 module.exports = {
 	db: 'mongodb://localhost/partners-mgt-dev',
 	app: {
-		title: 'partners-mgt - Development Environment'
+		title: 'Gigya Partner Management  - Development Environment'
 	},
 	facebook: {
 		clientID: process.env.FACEBOOK_ID || 'APP_ID',
